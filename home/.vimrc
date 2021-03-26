@@ -294,6 +294,7 @@
     """Plug 'posva/vim-vue'
     """Plug 'pangloss/vim-javascript'
     Plug 'tpope/vim-fireplace'
+    Plug 'guns/vim-clojure-static'
     Plug 'junegunn/rainbow_parentheses.vim'
     Plug 'guns/vim-sexp'
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
