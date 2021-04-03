@@ -402,6 +402,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
             \ | highlight VisualNOS ctermbg=8
             \ | highlight CursorLine ctermfg=0 ctermbg=12
             \ | highlight CursorColumn ctermfg=0 ctermbg=12
+            \ | highlight PMenu ctermbg=4
     augroup END
     colorscheme nord
 
