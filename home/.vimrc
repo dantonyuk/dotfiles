@@ -228,7 +228,7 @@
     Plug 'junegunn/gv.vim'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/vim-github-dashboard'
-    Plug 'dmitry-at-hyla/vim-colorschemes'
+    Plug 'dantonyuk/vim-colorschemes'
     Plug 'ryanoasis/vim-devicons'
     " vim-devicons {{{2
     let g:webdevicons_enable = 1
