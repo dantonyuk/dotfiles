@@ -13,21 +13,6 @@
 
     set tags=./tags;
 " }}}
-" Colors {{{
-    syntax on
-    "hi Normal ctermbg=DarkGrey ctermfg=White guifg=White guibg=grey20
-    "set background=dark
-
-    set t_Co=256
-    " colorscheme bw
-
-    colorscheme elflord
-
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-    highlight CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-    match ExtraWhitespace /\s\+$/    
-" }}}
 " Indentations, tabs/spaces {{{
     set expandtab
     set tabstop=4
@@ -228,7 +213,7 @@
     Plug 'junegunn/gv.vim'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/vim-github-dashboard'
-    Plug 'dantonyuk/vim-colorschemes'
+    Plug 'flazz/vim-colorschemes'
     Plug 'ryanoasis/vim-devicons'
     " vim-devicons {{{2
     let g:webdevicons_enable = 1
@@ -296,6 +281,9 @@
     Plug 'tpope/vim-fireplace'
     Plug 'guns/vim-clojure-static'
     Plug 'junegunn/rainbow_parentheses.vim'
+    """ rainbow_parentheses.vim {{{2
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+    """ }}}
     Plug 'guns/vim-sexp'
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
     "Plug 'guns/vim-clojure-static' " already in polyglot
@@ -395,7 +383,6 @@
     Plug 'michaeljsmith/vim-indent-object'
     call plug#end()
     " vim-colorschemes {{{2
-    colorscheme nord
     " }}}
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
@@ -405,6 +392,23 @@
         \ + [['Nobody wants to program with mutable strings anymore,', 'why do you want to program with mutable collections?', '- Rich Hickey']]
         \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
     " }}}
+" }}}
+" Colors {{{
+    syntax on
+    augroup colors
+        autocmd!
+        autocmd ColorScheme nord
+            \   highlight Visual ctermbg=8
+            \ | highlight VisualNOS ctermbg=8
+            \ | highlight CursorLine ctermfg=0 ctermbg=12
+            \ | highlight CursorColumn ctermfg=0 ctermbg=12
+    augroup END
+    colorscheme nord
+
+    "highlight ExtraWhitespace ctermbg=red guibg=red
+    "autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+    "highlight CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+    "match ExtraWhitespace /\s\+$/    
 " }}}
 " Russian keyboard {{{
     set keymap=russian-jcukenwin
