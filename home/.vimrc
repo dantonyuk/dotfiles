@@ -134,6 +134,21 @@
     augroup END
 " }}}
 " Plugins {{{1
+" Coc Extensions {{{2
+    let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-yaml',
+    \ 'coc-tsserver',
+    \ 'coc-vetur',
+    \ 'coc-explorer',
+    \ 'coc-go',
+    \ 'coc-java',
+    \ 'coc-lists',
+    \ 'coc-snippets'
+    \ ]
+" }}}
     runtime macros/matchit.vim
 
     let g:polyglot_disabled = ['go']
@@ -326,7 +341,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     "    let g:deoplete#enable_at_startup = 1
     "    }}}
     "endif
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
     " coc {{{2
     " Autocompletion mappings
     function! s:check_back_space() abort
