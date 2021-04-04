@@ -193,7 +193,7 @@
     "let g:airline_symbols.linenr = ''
     let g:airline_theme = 'papercolor'
     " }}}
-    "
+    Plug 'jreybert/vimagit'
     Plug 'tpope/vim-fugitive'
     " vim-fugitive {{{2
     nnoremap <silent> <Space>g :G<CR>
