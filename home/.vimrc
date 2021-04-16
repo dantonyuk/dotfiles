@@ -34,17 +34,6 @@
 " }}}
 " Line numbers {{{
     set number
-"    -- No more needed due to vim-unimpaired yor/yon
-"    inoremap <F11> <esc>:call NumberToggle()<cr>a
-"    nnoremap <F11> :call NumberToggle()<cr>
-"    function! NumberToggle()
-"        set number!
-"        if(&relativenumber == 1)
-"            set norelativenumber
-"        else
-"            set relativenumber
-"        endif
-"    endfunc
 " }}}
 " Command line {{{
     set cmdheight=1
@@ -61,16 +50,9 @@
     set shortmess=filmnrwxtToOI
     set showcmd
     set laststatus=2
-    "set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 " }}}
 " Sign column {{{
     set signcolumn=yes
-" }}}
-" Cursor line {{{
-    "set cursorline
-    highlight CursorLine cterm=NONE ctermbg=32 ctermfg=white
-    "autocmd InsertLeave,WinEnter * set cursorline
-    "autocmd InsertEnter,WinLeave * set nocursorline
 " }}}
 " Mouse {{{
     set ttyfast
@@ -96,19 +78,12 @@
     endif
 
     nnoremap <C-\> :nohlsearch<CR>
-    "inoremap <C-\> <Esc>:nohlsearch<CR>
     vnoremap <C-\> <Esc>:nohlsearch<CR>gv
 " }}}
 " Buffers {{{
     set hidden
     nnoremap <Leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
     nnoremap <Leader>s :update<CR>
-" }}}
-" Windows {{{
-"    map <C-h> <C-w>h
-"    map <C-j> <C-w>j
-"    map <C-k> <C-w>k
-"    map <C-l> <C-w>l
 " }}}
 " Wildignore {{{
     set wildignore+=*.pyc
@@ -154,32 +129,6 @@
     let g:polyglot_disabled = ['go']
 
     call plug#begin('~/.vim/plugged')
-    "Plug 'preservim/nerdtree'
-    "" NERDTree {{{2
-    "" if NERDTree is on only:
-    ""autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
-
-    "" Exit Vim if NERDTree is the only window left.
-    "autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-        "\ quit | endif
-    "" If another buffer tries to replace NERDTree, put in the other window, and bring back NERDTree.
-    "autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-        "\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-
-    "nnoremap <silent> <F11> :NERDTreeToggle<CR>
-    "inoremap <silent> <F11> <Esc>:NERDTreeToggle<CR>
-    "let s:NERDTreeIndicatorMap = {
-                    "\ 'Modified'  : '✹',
-                    "\ 'Staged'    : '✚',
-                    "\ 'Untracked' : '✭',
-                    "\ 'Renamed'   : '➜',
-                    "\ 'Unmerged'  : '═',
-                    "\ 'Deleted'   : '✖',
-                    "\ 'Dirty'     : '✗',
-                    "\ 'Clean'     : '✔︎',
-                    "\ 'Unknown'   : ''
-                    "\ }
-    "" }}}
     Plug 'preservim/nerdcommenter'
 
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -237,11 +186,17 @@
     let g:webdevicons_enable_airline_statusline = 1
     let g:webdevicons_enable_ctrlp = 1
     " }}}
-    """Plug 'derekwyatt/vim-scala'
-    """Plug 'udalov/kotlin-vim'
     Plug 'mhinz/vim-startify'
-    " startify {{{2
+    " vim-startify {{{2
     let g:startify_change_to_dir = 0
+    let g:startify_custom_header_quotes =
+        \ startify#fortune#predefined_quotes()
+        \ + [['Design is separating into things that can be composed.', '', '- Rich Hickey']]
+        \ + [['When you combine two pieces of data you get data.', 'When you combine two machines you get trouble.', '', '- Rich Hickey']]
+        \ + [['Nobody wants to program with mutable strings anymore,', 'why do you want to program with mutable collections?', '- Rich Hickey']]
+        \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
+        \ + [['It’s not an idea until you write it down.', '', '- Ivan Sutherland']]
+        \ + [['If the technology you do isn’t fun for you, you may wish to seek other employment.', 'Without the fun, none of us would go on.', '', '- Ivan Sutherland']]
     " }}}
     Plug 'mg979/vim-visual-multi'
     Plug 'junegunn/vim-peekaboo'
@@ -250,7 +205,7 @@
     Plug 'haya14busa/incsearch.vim'
     Plug 'haya14busa/incsearch-fuzzy.vim'
     Plug 'haya14busa/incsearch-easymotion.vim'
-    " {{{2
+    " easy-motion {{{2
     nmap s <Plug>(easymotion-overwin-f)
     map <Leader>j <Plug>(easymotion-j)
     map <Leader>k <Plug>(easymotion-k)
@@ -291,8 +246,6 @@
     " vim-go {{{2
     let g:go_version_warning = 0
     " }}}
-    """Plug 'posva/vim-vue'
-    """Plug 'pangloss/vim-javascript'
     Plug 'tpope/vim-fireplace'
     Plug 'guns/vim-clojure-static'
     Plug 'junegunn/rainbow_parentheses.vim'
@@ -301,19 +254,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     """ }}}
     Plug 'guns/vim-sexp'
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
-    "Plug 'guns/vim-clojure-static' " already in polyglot
-    " javascript {{{2
-    "let g:javascript_conceal_function             = "ƒ"
-    "let g:javascript_conceal_null                 = "ø"
-    "let g:javascript_conceal_this                 = "@"
-    "let g:javascript_conceal_return               = "⇚"
-    "let g:javascript_conceal_undefined            = "¿"
-    "let g:javascript_conceal_NaN                  = "ℕ"
-    "let g:javascript_conceal_prototype            = "¶"
-    "let g:javascript_conceal_static               = "•"
-    "let g:javascript_conceal_super                = "Ω"
-    "let g:javascript_conceal_arrow_function       = "⇒"
-    " }}}
     Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/vim-easy-align'
     " vim-easy-align {{{2
@@ -322,7 +262,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     xmap gA <Plug>(LiveEasyAlign)
     nmap gA <Plug>(LiveEasyAlign)
     " }}}
-    "Plug 'hdiniz/vim-gradle'
 
     Plug 'junegunn/goyo.vim'
     " goyo {{{2
@@ -335,12 +274,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     autocmd! User GoyoLeave Limelight!
     " }}}
 
-    "if has('nvim')
-    "    Plug 'Shougo/deoplete.nvim'
-    "    deoplete {{{2
-    "    let g:deoplete#enable_at_startup = 1
-    "    }}}
-    "endif
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
     " coc {{{2
     " Autocompletion mappings
@@ -386,8 +319,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     " Highlight current identifier usage in current document
     autocmd CursorHold * silent call CocActionAsync('highlight')
     " }}}
-    "Plug 'roxma/nvim-yarp'
-    "Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'mattn/emmet-vim'
     Plug 'nathanaelkane/vim-indent-guides'
     " vim-indent-guides {{{2
@@ -396,20 +327,13 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     " }}}
     " Text object plugins
     Plug 'michaeljsmith/vim-indent-object'
+    " To test them first
+    Plug 'DougBeney/vim-reddit'
     call plug#end()
-    " vim-colorschemes {{{2
-    " }}}
-    " vim-startify {{{2
-    let g:startify_custom_header_quotes =
-        \ startify#fortune#predefined_quotes()
-        \ + [['Design is separating into things that can be composed.', '', '- Rich Hickey']]
-        \ + [['When you combine two pieces of data you get data.', 'When you combine two machines you get trouble.', '', '- Rich Hickey']]
-        \ + [['Nobody wants to program with mutable strings anymore,', 'why do you want to program with mutable collections?', '- Rich Hickey']]
-        \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
-    " }}}
 " }}}
 " Colors {{{
     syntax on
+    match ExtraWhitespace /\s\+$/    
     augroup colors
         autocmd!
         autocmd ColorScheme nord
@@ -420,11 +344,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
             \ | highlight PMenu ctermbg=4
     augroup END
     colorscheme nord
-
-    "highlight ExtraWhitespace ctermbg=red guibg=red
-    "autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-    "highlight CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-    "match ExtraWhitespace /\s\+$/    
 " }}}
 " Russian keyboard {{{
     set keymap=russian-jcukenwin
