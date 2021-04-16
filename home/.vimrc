@@ -330,6 +330,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     Plug 'michaeljsmith/vim-indent-object'
     " To test them first
     Plug 'DougBeney/vim-reddit'
+    Plug 'rhysd/git-messenger.vim'
     call plug#end()
 " }}}
 " Colors {{{
