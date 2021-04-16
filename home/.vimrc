@@ -190,15 +190,6 @@
     Plug 'mhinz/vim-startify'
     " vim-startify {{{2
     let g:startify_change_to_dir = 0
-    let g:startify_custom_header_quotes =
-        \ startify#fortune#predefined_quotes()
-        \ + [['Design is separating into things that can be composed.', '', '- Rich Hickey']]
-        \ + [['When you combine two pieces of data you get data.', 'When you combine two machines you get trouble.', '', '- Rich Hickey']]
-        \ + [['Nobody wants to program with mutable strings anymore,', 'why do you want to program with mutable collections?', '- Rich Hickey']]
-        \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
-        \ + [['It’s not an idea until you write it down.', '', '- Ivan Sutherland']]
-        \ + [['If the technology you do isn’t fun for you, you may wish to seek other employment.', 'Without the fun, none of us would go on.', '', '- Ivan Sutherland']]
-    " }}}
     Plug 'mg979/vim-visual-multi'
     Plug 'junegunn/vim-peekaboo'
 
@@ -332,6 +323,17 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     Plug 'DougBeney/vim-reddit'
     Plug 'rhysd/git-messenger.vim'
     call plug#end()
+    " vim-startify {{{2
+    let g:startify_custom_header_quotes =
+        \ startify#fortune#predefined_quotes()
+        \ + [['Design is separating into things that can be composed.', '', '- Rich Hickey']]
+        \ + [['When you combine two pieces of data you get data.', 'When you combine two machines you get trouble.', '', '- Rich Hickey']]
+        \ + [['Nobody wants to program with mutable strings anymore,', 'why do you want to program with mutable collections?', '- Rich Hickey']]
+        \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
+        \ + [['It’s not an idea until you write it down.', '', '- Ivan Sutherland']]
+        \ + [['If the technology you do isn’t fun for you, you may wish to seek other employment.', 'Without the fun, none of us would go on.', '', '- Ivan Sutherland']]
+    " }}}
+    " }}}
 " }}}
 " Colors {{{
     syntax on
