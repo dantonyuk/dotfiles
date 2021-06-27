@@ -227,12 +227,7 @@
     noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
     " }}}
 
-    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    " snippets {{{2
-    let g:UltiSnipsListSnippets="<F2>"
-    nnoremap <F2> :Snippets<cr>
-    " }}}
 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " vim-go {{{2
@@ -341,7 +336,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " }}}
 " Colors {{{
     syntax on
-    match ExtraWhitespace /\s\+$/    
     augroup colors
         autocmd!
         autocmd ColorScheme nord
