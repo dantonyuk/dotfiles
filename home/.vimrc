@@ -139,7 +139,7 @@
     nnoremap <silent> <Leader>A :Files<CR>
 
     if has('nvim') || has('gui_running')
-      let $FZF_DEFAULT_OPTS .= ' --inline-info'
+      let $FZF_DEFAULT_OPTS .= ' --inline-info --bind up:preview-up,down:preview-down'
     endif
     " }}}
 
