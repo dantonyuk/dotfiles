@@ -125,7 +125,8 @@
     \ 'coc-snippets'
     \ ]
 " }}}
-    runtime macros/matchit.vim
+    packadd matchit
+    packadd cfilter
 
     let g:polyglot_disabled = ['go']
 
