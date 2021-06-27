@@ -245,7 +245,11 @@
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     """ }}}
     Plug 'guns/vim-sexp'
+    " vim-sexp {{{2
+    let g:sexp_filetypes = 'clojure,scheme,racket,lisp,timl'
+    " }}}
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
+
     Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/vim-easy-align'
     " vim-easy-align {{{2
