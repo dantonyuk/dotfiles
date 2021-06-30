@@ -18,8 +18,8 @@ export DISPLAY=$WSL_HOST:0
 export EDITOR=/usr/bin/nvim
 export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 
-export FZF_DEFAULT_OPTS="--preview 'cat {}'"
-export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+export FZF_DEFAULT_OPTS="--preview 'cat {}' --bind up:preview-up,down:preview-down"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 #export FZF_TMUX_HEIGHT=100%
 export FZF_DEFAULT_OPTS='
 --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
