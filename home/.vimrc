@@ -333,6 +333,13 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
     " To test them first
     Plug 'DougBeney/vim-reddit'
     Plug 'rhysd/git-messenger.vim'
+
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'NTBBloodbath/rest.nvim'
+    " rest-nvim {{{2
+    nnoremap <Space>hh :lua require('rest-nvim').run()<CR>
+    nnoremap <Space>hp :lua require('rest-nvim').run(true)<CR>
+    " }}}
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
