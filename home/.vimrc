@@ -249,9 +249,9 @@
     Plug 'tpope/vim-fireplace'
     Plug 'guns/vim-clojure-static'
     Plug 'junegunn/rainbow_parentheses.vim'
-    """ rainbow_parentheses.vim {{{2
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-    """ }}}
+    " rainbow_parentheses.vim {{{2
+    let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+    " }}}
     Plug 'guns/vim-sexp'
     " vim-sexp {{{2
     let g:sexp_filetypes = 'clojure,scheme,racket,lisp,timl'
