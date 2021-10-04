@@ -164,13 +164,15 @@
     Plug 'jreybert/vimagit'
     Plug 'tpope/vim-fugitive'
     " vim-fugitive {{{2
-    nnoremap <silent> <Space>g :G<CR>
-    nnoremap <silent> <Space>w :Gwrite<CR>
-    nnoremap <silent> <Space>r :Gread<CR>
-    nnoremap <silent> <Space>cc :Git commit<CR>
-    nnoremap <silent> <Space>ca :Git commit -a<CR>
-    nnoremap <silent> <Space>c! :Git commit --amend<CR>
-    nnoremap <silent> <Space>p :Git push<CR>
+    nnoremap <silent> <Space>gg :G<CR>
+    nnoremap <silent> <Space>gw :Gwrite<CR>
+    nnoremap <silent> <Space>gr :Gread<CR>
+    nnoremap <silent> <Space>gcc :Git commit<CR>
+    nnoremap <silent> <Space>gca :Git commit -a<CR>
+    nnoremap <silent> <Space>gc! :Git commit --amend<CR>
+    nnoremap <silent> <Space>gp :Git push<CR>
+    nnoremap <silent> <Space>gb :Git blame<CR>
+    nnoremap <silent> <Space>gd :tab Gvdiff<CR>
     " }}}
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
@@ -178,7 +180,14 @@
     Plug 'tpope/vim-eunuch'
     Plug 'idanarye/vim-merginal'
     Plug 'airblade/vim-gitgutter'
+    " vim-gitgutter {{{2
+    nnoremap <silent> <Space>gf :GitGutterFold<CR>
+    nnoremap <silent> <Space>gq :GitGutterQuickFix \| copen<CR>
+    " }}}
     Plug 'junegunn/gv.vim'
+    " gv.vim {{{2
+    nnoremap <silent> <Space>gv :GV<CR>
+    " }}}
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/vim-github-dashboard'
     Plug 'flazz/vim-colorschemes'
