@@ -202,6 +202,7 @@
     Plug 'mhinz/vim-startify'
     " vim-startify {{{2
     let g:startify_change_to_dir = 0
+    " }}}
     Plug 'mg979/vim-visual-multi'
     Plug 'junegunn/vim-peekaboo'
 
