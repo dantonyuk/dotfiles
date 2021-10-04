@@ -39,11 +39,13 @@
     set cmdheight=1
     set completeopt=menu,preview
     if has('nvim')
-        cnoremap <C-A> <Home>
-        cnoremap <C-F> <Right>
-        cnoremap <C-B> <Left>
-        cnoremap <Esc>b <S-Left>
-        cnoremap <Esc>f <S-Right>
+        "cnoremap <C-A> <Home>
+        "cnoremap <C-F> <Right>
+        "cnoremap <C-B> <Left>
+        "cnoremap <C-p> <Up>
+        "cnoremap <C-n> <Down>
+        "cnoremap <Esc>b <S-Left>
+        "cnoremap <Esc>f <S-Right>
     endif
 " }}}
 " Status line {{{
