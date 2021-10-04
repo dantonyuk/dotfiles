@@ -16,7 +16,10 @@ export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 export DISPLAY=$WSL_HOST:0
 
 export EDITOR=/usr/bin/nvim
-export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null
+then
+  export BROWSER=~/bin/browser
+fi
 
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --bind up:preview-up,down:preview-down"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
