@@ -174,7 +174,7 @@
     nnoremap <silent> <Space>gb :Git blame<CR>
     nnoremap <silent> <Space>gd :tab Gvdiff<CR>
     " }}}
-    Plug 'tpope/vim-surround'
+    Plug 'tmachakann/vim-sandwich'
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-eunuch'
@@ -210,7 +210,7 @@
     Plug 'haya14busa/incsearch-fuzzy.vim'
     Plug 'haya14busa/incsearch-easymotion.vim'
     " easy-motion {{{2
-    nmap s <Plug>(easymotion-overwin-f)
+    nnoremap <Space>s <Plug>(easymotion-overwin-f)
     map <Leader>j <Plug>(easymotion-j)
     map <Leader>k <Plug>(easymotion-k)
 
