@@ -174,7 +174,7 @@
     nnoremap <silent> <Space>gb :Git blame<CR>
     nnoremap <silent> <Space>gd :tab Gvdiff<CR>
     " }}}
-    Plug 'tmachakann/vim-sandwich'
+    Plug 'machakann/vim-sandwich'
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-eunuch'
@@ -350,7 +350,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
         \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
         \ + [['It’s not an idea until you write it down.', '', '- Ivan Sutherland']]
         \ + [['If the technology you do isn’t fun for you, you may wish to seek other employment.', 'Without the fun, none of us would go on.', '', '- Ivan Sutherland']]
-    " }}}
     " }}}
 " }}}
 " Colors {{{
