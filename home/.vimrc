@@ -292,37 +292,49 @@
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<Tab>"
 
     " Go to mappings
-    nmap <silent> Cd <Plug>(coc-definition)
-    nmap <silent> Ct <Plug>(coc-type-definition)
-    nmap <silent> Cp <Plug>(coc-implementation)
-    nmap <silent> Cr <Plug>(coc-references)
+    nmap <silent> <Space>ld <Plug>(coc-definition)
+    nmap <silent> <Space>lt <Plug>(coc-type-definition)
+    nmap <silent> <Space>lp <Plug>(coc-implementation)
+    nmap <silent> <Space>lr <Plug>(coc-references)
 
     " Diagnostics navigation
     nmap <silent> [g <Plug>(coc-diagnostic-prev)
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
     " Refactoring mappings
-    nmap CR <Plug>(coc-rename)
-    nmap CF <Plug>(coc-format)
-    xmap CF <Plug>(coc-format-selected)
-    nmap CA <Plug>(coc-codeaction)
-    xmap CA <Plug>(coc-codeaction-selected)
-    nmap CX <Plug>(coc-fix-current)
-    nmap Cx :CocFix<CR>
+    nmap <Space>ln <Plug>(coc-rename)
+    nmap <Space>lf <Plug>(coc-format)
+    xmap <Space>lf <Plug>(coc-format-selected)
+    nmap <Space>la <Plug>(coc-codeaction)
+    xmap <Space>la <Plug>(coc-codeaction-selected)
+    nmap <Space>lX <Plug>(coc-fix-current)
+    nmap <Space>lx :CocFix<CR>
+    nmap <Space>lo :call CocAction('organizeImport')<CR>
 
     " Coc lists mappings
-    nnoremap <silent> Cld :<C-u>CocList diagnostics<cr>
-    nnoremap <silent> Cle :<C-u>CocList extensions<cr>
-    nnoremap <silent> Clc :<C-u>CocList commands<cr>
-    nnoremap <silent> Clo :<C-u>CocList outline<cr>
-    nnoremap <silent> Cls :<C-u>CocList -I symbols<cr>
+    nnoremap <silent> <Space>lld :<C-u>CocList diagnostics<cr>
+    nnoremap <silent> <Space>lle :<C-u>CocList extensions<cr>
+    nnoremap <silent> <Space>llc :<C-u>CocList commands<cr>
+    nnoremap <silent> <Space>llo :<C-u>CocList outline<cr>
+    nnoremap <silent> <Space>lls :<C-u>CocList -I symbols<cr>
 
     " Show info mappings
-    nnoremap <silent> Ci :call CocAction('doHover')<CR>
+    nnoremap <silent> <Space>li :call CocAction('doHover')<CR>
 
     " Highlight current identifier usage in current document
     autocmd CursorHold * silent call CocActionAsync('highlight')
+
+    " Text objects: functions and classes
+    xmap if <Plug>(coc-funcobj-i)
+    omap if <Plug>(coc-funcobj-i)
+    xmap af <Plug>(coc-funcobj-a)
+    omap af <Plug>(coc-funcobj-a)
+    xmap ic <Plug>(coc-classobj-i)
+    omap ic <Plug>(coc-classobj-i)
+    xmap ac <Plug>(coc-classobj-a)
+    omap ac <Plug>(coc-classobj-a)
     " }}}
+
     Plug 'mattn/emmet-vim'
     Plug 'nathanaelkane/vim-indent-guides'
     " vim-indent-guides {{{2
