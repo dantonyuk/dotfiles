@@ -54,7 +54,7 @@
     set laststatus=2
 " }}}
 " Sign column {{{
-    set signcolumn=yes
+    set signcolumn=auto:5
 " }}}
 " Mouse {{{
     set ttyfast
@@ -353,6 +353,7 @@
     nnoremap <Space>hh :lua require('rest-nvim').run()<CR>
     nnoremap <Space>hp :lua require('rest-nvim').run(true)<CR>
     " }}}
+    Plug 'jeetsukumaran/vim-markology'
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
@@ -363,6 +364,17 @@
         \ + [['Eventually, with mutable objects you create an intractable mess. And encapsulation does not get rid of that. Encapsulation only means: "well I''m in charge of this mess".', '- Rich Hickey']]
         \ + [['It’s not an idea until you write it down.', '', '- Ivan Sutherland']]
         \ + [['If the technology you do isn’t fun for you, you may wish to seek other employment.', 'Without the fun, none of us would go on.', '', '- Ivan Sutherland']]
+    " }}}
+    " markology {{{2
+    let g:markology_enable=0
+    let g:markology_textlower=' '
+    let g:markology_textupper=' '
+    let g:markology_textother=' '
+    hi MarkologyHLl ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
+    hi MarkologyHLLine cterm=underline gui=undercurl guisp=#007777
+    hi MarkologyHLu ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
+    hi MarkologyHLo ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
+    hi MarkologyHLm ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
     " }}}
 " }}}
 " Colors {{{
