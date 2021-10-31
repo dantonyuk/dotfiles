@@ -167,7 +167,7 @@
     nnoremap <silent> <Space>gg :G<CR>
     nnoremap <silent> <Space>gw :Gwrite<CR>
     nnoremap <silent> <Space>gr :Gread<CR>
-    nnoremap <silent> <Space>gcc :Git commit<CR>
+    nnoremap <silent> <Space>gcc :Git commit -v<CR>
     nnoremap <silent> <Space>gca :Git commit -a<CR>
     nnoremap <silent> <Space>gc! :Git commit --amend<CR>
     nnoremap <silent> <Space>gp :Git push<CR>
