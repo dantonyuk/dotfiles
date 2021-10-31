@@ -138,8 +138,8 @@ zinit wait lucid for \
 zinit pack"binary+keys" for fzf
 #zinit light Aloxaf/fzf-tab
 zinit snippet "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh"
-zinit snippet "https://gist.githubusercontent.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236/raw/e71264d55876f8949855280c0792809331b5a8cf/functions.sh"
-zinit snippet "https://gist.githubusercontent.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236/raw/e71264d55876f8949855280c0792809331b5a8cf/key-binding.zsh"
+zinit snippet "https://gist.githubusercontent.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236/raw/6e5d520bfc96d6b3e42571a54cb4d1ebc8e2dd84/functions.sh"
+zinit snippet "https://gist.githubusercontent.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236/raw/6e5d520bfc96d6b3e42571a54cb4d1ebc8e2dd84/key-binding.zsh"
 #zstyle ':completion:*:*:*:default' menu yes select search
 
 # SDKMAN!
