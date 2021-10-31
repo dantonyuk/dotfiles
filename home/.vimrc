@@ -354,6 +354,7 @@
     nnoremap <Space>hp :lua require('rest-nvim').run(true)<CR>
     " }}}
     Plug 'jeetsukumaran/vim-markology'
+    Plug 'liuchengxu/vim-clap'
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
