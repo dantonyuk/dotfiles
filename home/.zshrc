@@ -19,13 +19,11 @@ then
   export BROWSER=~/bin/browser
 fi
 
-export FZF_DEFAULT_OPTS="--preview 'cat {}' --bind up:preview-up,down:preview-down"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-#export FZF_TMUX_HEIGHT=100%
-export FZF_DEFAULT_OPTS='
+export FZF_DEFAULT_OPTS="--preview 'cat {}' --bind up:preview-up,down:preview-down
 --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
-'
+"
 
 setopt extendedglob
 unsetopt BG_NICE
