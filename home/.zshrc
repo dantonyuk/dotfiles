@@ -126,6 +126,21 @@ zinit ice wait'!0'
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
+forgit_log=fglo
+forgit_diff=fgd
+forgit_add=fga
+forgit_reset_head=fgrh
+forgit_ignore=fgi
+forgit_checkout_file=fgcf
+forgit_checkout_branch=fgcb
+forgit_checkout_commit=fgco
+forgit_clean=fgclean
+forgit_stash_show=fgss
+forgit_cherry_pick=fgcp
+forgit_rebase=fgrb
+forgit_fixup=fgfu
+zinit load wfxr/forgit
+
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay"  \
     zdharma/fast-syntax-highlighting \
