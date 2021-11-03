@@ -10,8 +10,10 @@ fi
 export PATH=$HOME/go/bin:$HOME/bin:$HOME/miniconda3/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
-export DISPLAY=$WSL_HOST:0
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+  export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+  export DISPLAY=$WSL_HOST:0
+fi
 export GPG_TTY=$(tty)
 
 export EDITOR=/usr/bin/nvim
