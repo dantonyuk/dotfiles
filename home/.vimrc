@@ -211,7 +211,8 @@
     Plug 'haya14busa/incsearch-fuzzy.vim'
     Plug 'haya14busa/incsearch-easymotion.vim'
     " easy-motion {{{2
-    nnoremap <Space>s <Plug>(easymotion-overwin-f)
+    map <Leader>f <Plug>(easymotion-overwin-f)
+    map <Leader>w <Plug>(easymotion-overwin-w)
     map <Leader>j <Plug>(easymotion-j)
     map <Leader>k <Plug>(easymotion-k)
 
