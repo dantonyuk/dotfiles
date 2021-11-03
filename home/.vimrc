@@ -191,14 +191,6 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/vim-github-dashboard'
     Plug 'flazz/vim-colorschemes'
-    Plug 'ryanoasis/vim-devicons'
-    " vim-devicons {{{2
-    let g:webdevicons_enable = 1
-    let g:webdevicons_enable_nerdtree = 1
-    let g:webdevicons_enable_airline_tabline = 1
-    let g:webdevicons_enable_airline_statusline = 1
-    let g:webdevicons_enable_ctrlp = 1
-    " }}}
     Plug 'mhinz/vim-startify'
     " vim-startify {{{2
     let g:startify_change_to_dir = 0
@@ -356,6 +348,9 @@
     " }}}
     Plug 'jeetsukumaran/vim-markology'
     Plug 'liuchengxu/vim-clap'
+    Plug 'kyazdani42/nvim-web-devicons'
+    
+    Plug 'dantonyuk/nvim-web-devicons-airline'
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
