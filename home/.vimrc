@@ -348,6 +348,8 @@
     " }}}
     Plug 'jeetsukumaran/vim-markology'
     Plug 'liuchengxu/vim-clap'
+    Plug 'mattn/webapi-vim'
+    Plug 'mattn/vim-gist'
     Plug 'kyazdani42/nvim-web-devicons'
     
     Plug 'dantonyuk/nvim-web-devicons-airline'
