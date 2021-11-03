@@ -351,6 +351,8 @@
     Plug 'mattn/webapi-vim'
     Plug 'mattn/vim-gist'
     Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'pwntester/octo.nvim'
     
     Plug 'dantonyuk/nvim-web-devicons-airline'
     call plug#end()
