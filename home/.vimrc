@@ -311,8 +311,10 @@
     nnoremap <silent> <Space>llo :<C-u>CocList outline<cr>
     nnoremap <silent> <Space>lls :<C-u>CocList -I symbols<cr>
 
-    " Show info mappings
-    nnoremap <silent> <Space>li :call CocAction('doHover')<CR>
+    " Util mappings
+    nnoremap <silent> <Space>li :<C-u>call CocAction('doHover')<CR>
+    nmap <silent> <Space>ls <Plug>(coc-range-select)
+    xmap <silent> <Space>ls <Plug>(coc-range-select)
 
     " Highlight current identifier usage in current document
     autocmd CursorHold * silent call CocActionAsync('highlight')
