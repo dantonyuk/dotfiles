@@ -468,8 +468,8 @@
 " Some fun stuff {{{
 
 " Morse operator
-nnoremap <silent> gm :set opfunc=Morse<cr>g@
-vnoremap <silent> gm :<c-u>call Morse(visualmode(), 1)<cr>
+"nnoremap <silent> gm :set opfunc=Morse<cr>g@
+"vnoremap <silent> gm :<c-u>call Morse(visualmode(), 1)<cr>
 function! Morse(vt, ...)
     let [sl, sc] = getpos(a:0 ? "'<" : "'[")[1:2]
     let [el, ec] = getpos(a:0 ? "'>" : "']")[1:2]
