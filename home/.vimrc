@@ -380,6 +380,25 @@
     hi MarkologyHLm ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
     " }}}
 " }}}
+lua << EOF
+require"octo".setup({
+    colors = {
+        white = { gui = "#ffffff", cterm = "Black" },
+        grey = { gui = "#d7dadf", cterm = "Grey" },
+        black = { gui = "#000000", cterm = "White" },
+        red = { gui = "#fdb8c0", cterm = "Green" },
+        dark_red = { gui = "#da3633", cterm = "Green" },
+        green = { gui = "#acf2bd", cterm = "Red" },
+        dark_green = { gui = "#238636", cterm = "Red" },
+        yellow = { gui = "#d3c846", cterm = "Blue" },
+        dark_yellow = { gui = "#735c0f", cterm = "Blue" },
+        blue = { gui = "#58A6FF", cterm = "Yellow" },
+        dark_blue = { gui = "#0366d6", cterm = "Yellow" },
+        purple = { gui = "#6f42c1", cterm = "54" },
+    }
+})
+require'octo.colors'.setup()
+EOF
 " Colors {{{
     syntax on
     augroup colors
@@ -392,6 +411,9 @@
             \ | highlight PMenu ctermbg=4
     augroup END
     colorscheme nord
+
+    hi Pmenu ctermbg=253 ctermfg=0
+    hi PmenuSel ctermbg=26 ctermfg=7
 " }}}
 " Russian keyboard {{{
     set keymap=russian-jcukenwin
