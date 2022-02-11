@@ -136,7 +136,6 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     let g:polyglot_disabled = ['go']
 
     call plug#begin('~/.vim/plugged')
-    Plug 'preservim/nerdcommenter'
 
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -186,6 +185,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-commentary'
     Plug 'idanarye/vim-merginal'
     Plug 'airblade/vim-gitgutter'
     " vim-gitgutter {{{2
