@@ -56,6 +56,9 @@
 " Sign column {{{
     set signcolumn=auto:5
 " }}}
+" {{{ Title
+autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
+" }}}
 " Mouse {{{
     set ttyfast
     if !has('nvim')
