@@ -291,6 +291,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
                 \ <SID>check_back_space() ? "\<Tab>" :
                 \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<Tab>"
+    inoremap <expr><C-y><C-y> pumvisible() ? "\<C-y>" : "\<C-y>\<C-y>"
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
     " Go to mappings
     nmap <silent> <Space>ld <Plug>(coc-definition)
