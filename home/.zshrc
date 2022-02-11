@@ -23,6 +23,8 @@ then
 fi
 
 export FZF_DEFAULT_COMMAND='rg --hidden --files --glob "!.git/"'
+export FZF_CTRL_T_OPTS="--preview 'fzf-preview {}' --preview-window up:75%
+--height 100% --layout default --inline-info"
 export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-up,ctrl-d:preview-down
 --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
