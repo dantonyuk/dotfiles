@@ -422,6 +422,7 @@ EOF
 
     hi Pmenu ctermbg=253 ctermfg=0
     hi PmenuSel ctermbg=26 ctermfg=7
+    hi FgCocWarningFloatBgCocFloating ctermfg=172 ctermbg=253
 " }}}
 " Russian keyboard {{{
     set keymap=russian-jcukenwin
