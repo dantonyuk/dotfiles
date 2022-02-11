@@ -165,6 +165,11 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     let g:airline_theme = 'papercolor'
     " }}}
     Plug 'jreybert/vimagit'
+    Plug 'rhysd/git-messenger.vim'
+    " git-messenger {{{2
+    nnoremap <silent> <Space>gm :GitMessenger<CR>
+    nmap <silent> <Space>gM gmgm
+    " }}}
     Plug 'tpope/vim-fugitive'
     " vim-fugitive {{{2
     nnoremap <silent> <Space>gg :G<CR>
