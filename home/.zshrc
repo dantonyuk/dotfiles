@@ -11,7 +11,7 @@ export PATH=$HOME/go/bin:$HOME/bin:$HOME/miniconda3/bin:$HOME/.cargo/bin:$HOME/.
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-  export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+  export WSL_HOST=$(ip route | grep default | awk '{print $3}')
   export DISPLAY=$WSL_HOST:0
 fi
 export GPG_TTY=$(tty)
