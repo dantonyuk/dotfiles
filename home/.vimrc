@@ -348,6 +348,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     " }}}
     " Text object plugins
     Plug 'michaeljsmith/vim-indent-object'
+    Plug 'wellle/targets.vim'
     " To test them first
     Plug 'DougBeney/vim-reddit'
 
