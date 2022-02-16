@@ -139,6 +139,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
 
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
     " fzf {{{2
     nnoremap <silent> <Leader>a :Buffers<CR>
     nnoremap <silent> <Leader>A :Files<CR>
@@ -146,6 +147,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     if has('nvim') || has('gui_running')
       let $FZF_DEFAULT_OPTS .= ' --inline-info --bind up:preview-up,down:preview-down'
     endif
+
+    nnoremap <Space><Tab> :CocCommand fzf-preview.
     " }}}
 
     Plug 'vim-airline/vim-airline'
