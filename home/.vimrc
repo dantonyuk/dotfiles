@@ -207,7 +207,6 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     let g:startify_change_to_dir = 0
     " }}}
     Plug 'mg979/vim-visual-multi'
-    Plug 'junegunn/vim-peekaboo'
 
     Plug 'easymotion/vim-easymotion'
     Plug 'haya14busa/incsearch.vim'
