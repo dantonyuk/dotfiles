@@ -151,21 +151,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     nnoremap <Space><Tab> :CocCommand fzf-preview.
     " }}}
 
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    " {{{2
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols = {}
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    "let g:airline_symbols.linenr = ''
-    let g:airline_theme = 'papercolor'
-    " }}}
+    Plug 'akinsho/bufferline.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'jreybert/vimagit'
     Plug 'rhysd/git-messenger.vim'
     " git-messenger {{{2
@@ -368,7 +355,6 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'pwntester/octo.nvim'
     
-    Plug 'dantonyuk/nvim-web-devicons-airline'
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
@@ -393,7 +379,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     " }}}
 " }}}
 lua << EOF
-require"octo".setup({
+-- octo
+require"octo".setup {
     colors = {
         white = { gui = "#ffffff", cterm = "Black" },
         grey = { gui = "#d7dadf", cterm = "Grey" },
@@ -408,8 +395,105 @@ require"octo".setup({
         dark_blue = { gui = "#0366d6", cterm = "Yellow" },
         purple = { gui = "#6f42c1", cterm = "54" },
     }
-})
+}
 require'octo.colors'.setup()
+
+-- lualine
+hide_in_width = function()
+        return vim.fn.winwidth(0) > 72
+end
+
+require('lualine').setup {
+    options = {
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        disabled_filetypes = { "coc-explorer" }
+    },
+    sections = {
+        lualine_a = {
+            {
+                "mode"
+            }
+        },
+        lualine_b = {
+            {
+                "branch",
+                icon = " "
+            },
+            {
+                "filename"
+            }
+        },
+        lualine_c = {
+            {
+                "diff",
+                symbols = { added = "  ", modified = " ", removed = " " },
+            },
+            {
+                "python_env"
+            }
+        },
+        lualine_x = {
+            {
+                "diagnostics",
+				sources = { 'nvim_diagnostic', 'coc' },
+                symbols = { error = " ", warn = " ", info = " ", hint = " " },
+                cond = hide_in_width,
+            },
+            {
+                "treesitter"
+            },
+            {
+                "lsp"
+            },
+            {
+                "filetype"
+            }
+        },
+        lualine_y = {},
+        lualine_z = {
+            {
+                function()
+                    local current_line = vim.fn.line "."
+                    local total_lines = vim.fn.line "$"
+                    local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+                    local line_ratio = current_line / total_lines
+                    local index = math.ceil(line_ratio * #chars)
+                    local percent = math.ceil(line_ratio * 100)
+                    return " " .. tostring(percent) .. "%% " .. chars[index] .. " "
+                end,
+                padding = { left = 0, right = 0 },
+                color = { fg = "yellow", bg = vim.fn.synIDattr(vim.api.nvim_get_hl_id_by_name('Normal'), 'bg') },
+                cond = nil,
+            }
+        },
+    },
+}
+
+-- bufferline
+vim.opt.termguicolors = true
+require("bufferline").setup {
+    highlights = {
+      background = {
+        gui = "",
+      },
+      buffer_selected = {
+        gui = "bold",
+      },
+    },
+    options = {
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        offsets = {
+            {
+                filetype = "coc-explorer",
+                text = "Explorer",
+                highlight = "PanelHeading",
+                padding = 1,
+            }
+        }
+    }
+}
 EOF
 " Colors {{{
     syntax on
