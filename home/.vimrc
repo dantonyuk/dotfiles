@@ -189,6 +189,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     map <Space>ghs <Plug>(GitGutterStageHunk)
     map <Space>ghu <Plug>(GitGutterUndoHunk)
     map <Space>ghp <Plug>(GitGutterPreviewHunk)
+    nmap <Space>ghS :Gwrite<CR>
+    nmap <Space>ghU :G reset %<CR>
     " }}}
     Plug 'junegunn/gv.vim'
     " gv.vim {{{2
@@ -365,7 +367,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
 
     Plug 'dantonyuk/auto-sessions.vim'
     Plug 'dantonyuk/russian-keyboard.vim'
-    
+ 
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
