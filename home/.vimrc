@@ -185,6 +185,10 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
 
     nnoremap <silent> <Space>gf :GitGutterFold<CR>
     nnoremap <silent> <Space>gq :GitGutterQuickFix \| copen<CR>
+
+    nmap <Space>ghs <Plug>(GitGutterStageHunk)
+    nmap <Space>ghu <Plug>(GitGutterUndoHunk)
+    nmap <Space>ghp <Plug>(GitGutterPreviewHunk)
     " }}}
     Plug 'junegunn/gv.vim'
     " gv.vim {{{2
