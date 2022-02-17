@@ -354,6 +354,8 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'pwntester/octo.nvim'
+
+    Plug 'dantonyuk/auto-sessions.vim'
     
     call plug#end()
     " vim-startify {{{2
