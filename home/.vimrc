@@ -190,7 +190,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     map <Space>ghu <Plug>(GitGutterUndoHunk)
     map <Space>ghp <Plug>(GitGutterPreviewHunk)
     nmap <Space>ghS :Gwrite<CR>
-    nmap <Space>ghU :G reset %<CR>
+    nmap <Space>ghU :G checkout HEAD -- %<CR>
     " }}}
     Plug 'junegunn/gv.vim'
     " gv.vim {{{2
