@@ -499,20 +499,7 @@ require("bufferline").setup {
 EOF
 " Colors {{{
     syntax on
-    augroup colors
-        autocmd!
-        autocmd ColorScheme nord
-            \   highlight Visual ctermbg=8
-            \ | highlight VisualNOS ctermbg=8
-            \ | highlight CursorLine ctermfg=0 ctermbg=12
-            \ | highlight CursorColumn ctermfg=0 ctermbg=12
-            \ | highlight PMenu ctermbg=4
-    augroup END
     colorscheme nord
-
-    hi Pmenu ctermbg=253 ctermfg=0
-    hi PmenuSel ctermbg=26 ctermfg=7
-    hi FgCocWarningFloatBgCocFloating ctermfg=172 ctermbg=253
 " }}}
 " Russian keyboard {{{
     set keymap=russian-jcukenwin
