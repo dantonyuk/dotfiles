@@ -384,11 +384,11 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     let g:markology_textlower=' '
     let g:markology_textupper=' '
     let g:markology_textother=' '
-    hi MarkologyHLl ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
     hi MarkologyHLLine cterm=underline gui=undercurl guisp=#007777
-    hi MarkologyHLu ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
-    hi MarkologyHLo ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
-    hi MarkologyHLm ctermfg=yellow ctermbg=black cterm=bold guifg=green guibg=black
+    hi MarkologyHLl ctermfg=yellow ctermbg=black cterm=bold guifg=#9BFF9D guibg=#2E3440
+    hi MarkologyHLu ctermfg=yellow ctermbg=black cterm=bold guifg=#9BFF9D guibg=#2E3440
+    hi MarkologyHLo ctermfg=yellow ctermbg=black cterm=bold guifg=#9BFF9D guibg=#2E3440
+    hi MarkologyHLm ctermfg=yellow ctermbg=black cterm=bold guifg=#9BFF9D guibg=#2E3440
     " }}}
 " }}}
 lua << EOF
