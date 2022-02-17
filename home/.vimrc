@@ -179,6 +179,10 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     Plug 'idanarye/vim-merginal'
     Plug 'airblade/vim-gitgutter'
     " vim-gitgutter {{{2
+	let g:gitgutter_sign_added = '▎'
+	let g:gitgutter_sign_modified = '▎'
+	let g:gitgutter_sign_removed = '▎'
+
     nnoremap <silent> <Space>gf :GitGutterFold<CR>
     nnoremap <silent> <Space>gq :GitGutterQuickFix \| copen<CR>
     " }}}
