@@ -393,22 +393,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
 " }}}
 lua << EOF
 -- octo
-require"octo".setup {
-    colors = {
-        white = { gui = "#ffffff", cterm = "Black" },
-        grey = { gui = "#d7dadf", cterm = "Grey" },
-        black = { gui = "#000000", cterm = "White" },
-        red = { gui = "#fdb8c0", cterm = "Green" },
-        dark_red = { gui = "#da3633", cterm = "Green" },
-        green = { gui = "#acf2bd", cterm = "Red" },
-        dark_green = { gui = "#238636", cterm = "Red" },
-        yellow = { gui = "#d3c846", cterm = "Blue" },
-        dark_yellow = { gui = "#735c0f", cterm = "Blue" },
-        blue = { gui = "#58A6FF", cterm = "Yellow" },
-        dark_blue = { gui = "#0366d6", cterm = "Yellow" },
-        purple = { gui = "#6f42c1", cterm = "54" },
-    }
-}
+require"octo".setup {}
 require'octo.colors'.setup()
 
 -- lualine
