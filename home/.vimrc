@@ -258,7 +258,7 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
     " }}}
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
-    Plug 'sheerun/vim-polyglot'
+    "Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/vim-easy-align'
     " vim-easy-align {{{2
     xmap ga <Plug>(EasyAlign)
