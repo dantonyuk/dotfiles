@@ -409,27 +409,21 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {
-            {
-                "mode"
-            }
+            "mode"
         },
         lualine_b = {
             {
                 "branch",
                 icon = " "
             },
-            {
-                "filename"
-            }
+            "filename"
         },
         lualine_c = {
             {
                 "diff",
                 symbols = { added = "  ", modified = " ", removed = " " },
             },
-            {
-                "python_env"
-            }
+            "python_env"
         },
         lualine_x = {
             {
@@ -438,18 +432,12 @@ require('lualine').setup {
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
                 cond = hide_in_width,
             },
-            {
-                "treesitter"
-            },
-            {
-                "lsp"
-            },
-            {
-                "filetype"
-            }
+            "treesitter", "lsp",
+            "filetype", "fileformat", "encoding"
         },
         lualine_y = {},
         lualine_z = {
+            "location", "progress",
             {
                 function()
                     local current_line = vim.fn.line "."
@@ -457,11 +445,10 @@ require('lualine').setup {
                     local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
                     local line_ratio = current_line / total_lines
                     local index = math.ceil(line_ratio * #chars)
-                    local percent = math.ceil(line_ratio * 100)
-                    return " " .. tostring(percent) .. "%% " .. chars[index] .. " "
+                    return chars[index] .. " "
                 end,
                 padding = { left = 0, right = 0 },
-                color = { fg = "yellow", bg = vim.fn.synIDattr(vim.api.nvim_get_hl_id_by_name('Normal'), 'bg') },
+                color = { fg = "#9BFF9D", bg = vim.fn.synIDattr(vim.api.nvim_get_hl_id_by_name('Normal'), 'bg') },
                 cond = nil,
             }
         },
