@@ -418,7 +418,12 @@ require('lualine').setup {
             },
             {
                 "filename",
-                path = 1
+                path = 1,
+                symbols = {
+                    modified = ' 🔨',
+                    readonly = ' 🔒',
+                    unnamed = '[No Name]'
+                }
             }
         },
         lualine_c = {
