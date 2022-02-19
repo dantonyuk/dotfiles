@@ -430,6 +430,10 @@ require('lualine').setup {
         },
         lualine_x = {
             {
+                'coc#status',
+                type = 'vim_fun'
+            },
+            {
                 "diagnostics",
 				sources = { 'nvim_diagnostic', 'coc' },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
