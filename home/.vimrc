@@ -416,7 +416,10 @@ require('lualine').setup {
                 "branch",
                 icon = " "
             },
-            "filename"
+            {
+                "filename",
+                path = 1
+            }
         },
         lualine_c = {
             {
