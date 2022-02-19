@@ -444,7 +444,11 @@ require('lualine').setup {
         },
         lualine_y = {},
         lualine_z = {
-            "location", "progress",
+            {
+                "location",
+                icon = ""
+            },
+            "progress",
             {
                 function()
                     local current_line = vim.fn.line "."
