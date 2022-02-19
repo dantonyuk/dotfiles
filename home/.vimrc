@@ -448,9 +448,9 @@ require('lualine').setup {
                     local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
                     local line_ratio = current_line / total_lines
                     local index = math.ceil(line_ratio * #chars)
-                    return chars[index] .. " "
+                    return chars[index]
                 end,
-                padding = { left = 0, right = 0 },
+                padding = 1,
                 color = { fg = "#9BFF9D", bg = vim.fn.synIDattr(vim.api.nvim_get_hl_id_by_name('Normal'), 'bg') },
                 cond = nil,
             }
