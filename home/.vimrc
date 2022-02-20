@@ -451,7 +451,7 @@ require('lualine').setup {
         lualine_z = {
             {
                 "location",
-                icon = ""
+                icon = "📑"
             },
             "progress",
             {
