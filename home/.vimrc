@@ -419,6 +419,7 @@ require('lualine').setup {
             {
                 "filename",
                 path = 1,
+                shorting_target = 100,
                 symbols = {
                     modified = ' 🔨',
                     readonly = ' 🔒',
