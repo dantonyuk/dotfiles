@@ -398,7 +398,7 @@ require'octo.colors'.setup()
 
 -- lualine
 hide_in_width = function()
-        return vim.fn.winwidth(0) > 72
+    return vim.fn.winwidth(0) > 72
 end
 
 require('lualine').setup {
