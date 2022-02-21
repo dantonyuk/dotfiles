@@ -105,6 +105,24 @@ autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
 " Macros {{{
     set lazyredraw
 " }}}
+" {{{ Commands
+function! Scratch(bang, options) abort
+  if a:bang
+    let l:command = ':enew'
+  else
+    let l:command = ':new'
+  endif
+  let l:command .= ' | setlocal buftype=nofile bufhidden=wipe nobuflisted'
+  if len(a:options) > 0
+    let l:command .= ' ' . a:options
+  endif
+  execute 'silent ' . l:command
+endfunction
+
+command! -bang -nargs=* -complete=option Scratch call Scratch(<bang>0, <q-args>)
+
+map <Space>n<Space> :Scratch<Space>
+" }}}
 " File type autocmds {{{
     augroup md
         autocmd BufNewFile,BufRead *.md set tabstop=2 shiftwidth=2 expandtab tw=72
