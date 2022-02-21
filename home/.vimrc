@@ -170,6 +170,10 @@ map <Space>n<Space> :Scratch<Space>
     " }}}
 
     Plug 'akinsho/bufferline.nvim'
+    " bufferline.nvim {{{2
+    nnoremap <Space>bp :BufferLinePick<CR>
+    nnoremap <Space>bc :BufferLinePickClose<CR>
+    " }}}
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'jreybert/vimagit'
     Plug 'rhysd/git-messenger.vim'
