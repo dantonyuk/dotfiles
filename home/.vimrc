@@ -409,6 +409,7 @@ map <Space>n<Space> :Scratch<Space>
     hi MarkologyHLm ctermfg=yellow ctermbg=black cterm=bold guifg=#9BFF9D guibg=#2E3440
     " }}}
 " }}}
+" {{{ Lua config
 lua << EOF
 -- octo
 require"octo".setup {}
@@ -523,6 +524,7 @@ require("bufferline").setup {
     }
 }
 EOF
+" }}}
 " Colors {{{
     syntax on
     colorscheme nord
