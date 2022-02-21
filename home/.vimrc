@@ -291,7 +291,8 @@ map <Space>n<Space> :Scratch<Space>
 
     Plug 'junegunn/goyo.vim'
     " goyo {{{2
-    nmap <F5> :Goyo<CR>
+    map <silent> <F5> :Goyo<CR>
+    map! <silent> <F5> :Goyo<CR>
     " }}}
     Plug 'junegunn/limelight.vim'
     " limelight {{{2
