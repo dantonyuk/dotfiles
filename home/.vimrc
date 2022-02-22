@@ -135,6 +135,7 @@ map <Space>n<Space> :Scratch<Space>
 " Plugins {{{1
 " Coc Extensions {{{2
     let g:coc_global_extensions = [
+    \ 'coc-pairs',
     \ 'coc-css',
     \ 'coc-html',
     \ 'coc-json',
