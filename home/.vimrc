@@ -136,6 +136,7 @@ map <Space>n<Space> :Scratch<Space>
 " Coc Extensions {{{2
     let g:coc_global_extensions = [
     \ 'coc-pairs',
+    \ 'coc-fzf-preview',
     \ 'coc-css',
     \ 'coc-html',
     \ 'coc-json',
