@@ -1,8 +1,8 @@
 " vim: set fdm=marker:
 
 " Compatibility {{{
-    set nocompatible
-    set encoding=utf8
+    set encoding=utf-8
+    scriptencoding utf-8
     set modelines=1
     set nobackup
     set nowrap
@@ -57,7 +57,10 @@
     set signcolumn=auto:5
 " }}}
 " {{{ Title
-autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
+augroup Title
+  autocmd!
+  autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
+augroup END
 " }}}
 " Mouse {{{
     set ttyfast
@@ -255,7 +258,7 @@ map <Space>n<Space> :Scratch<Space>
       return extend(copy({
       \   'converters': [incsearch#config#fuzzy#converter()],
       \   'modules': [incsearch#config#easymotion#module()],
-      \   'keymap': {"<C-M>": '<Over>(easymotion)'},
+      \   'keymap': {'<C-M>': '<Over>(easymotion)'},
       \   'is_expr': 0,
       \   'is_stay': 1
       \ }), get(a:, 1, {}))
@@ -299,8 +302,11 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'junegunn/limelight.vim'
     " limelight {{{2
     let g:limelight_conceal_ctermfg = '238'
-    autocmd! User GoyoEnter Limelight
-    autocmd! User GoyoLeave Limelight!
+    augroup Goyo
+      autocmd!
+      autocmd User GoyoEnter Limelight
+      autocmd User GoyoLeave Limelight!
+    augroup END
     " }}}
 
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
@@ -351,7 +357,10 @@ map <Space>n<Space> :Scratch<Space>
     xmap <silent> <Space>ls <Plug>(coc-range-select)
 
     " Highlight current identifier usage in current document
-    autocmd CursorHold * silent call CocActionAsync('highlight')
+    augroup CocHighlight
+      autocmd!
+      autocmd CursorHold * silent call CocActionAsync('highlight')
+    augroup END
 
     " Text objects: functions and classes
     xmap if <Plug>(coc-funcobj-i)
@@ -545,10 +554,10 @@ EOF
 function! Morse(vt, ...)
     let [sl, sc] = getpos(a:0 ? "'<" : "'[")[1:2]
     let [el, ec] = getpos(a:0 ? "'>" : "']")[1:2]
-    if a:vt == 'line'
-    elseif a:vt == 'char'
+    if a:vt ==# 'line'
+    elseif a:vt ==# 'char'
         exe sl.','.el.'s/\%'.sc.'c.\+\%<'.(ec + 1).'c/\=MorseMap(submatch(0))/g'
-    elseif a:vt == 'block'
+    elseif a:vt ==# 'block'
     endif
 endfunction
 
