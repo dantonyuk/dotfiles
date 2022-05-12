@@ -58,9 +58,9 @@ autoload -U zmv
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -68,16 +68,6 @@ fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
-
-### End of Zinit's installer chunk
 
 zinit ice blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
@@ -91,7 +81,7 @@ compinit -C
 
 #zinit ice atinit'zmodload zsh/zprof' \
 #  atload'zprof | head -n 20; zmodload -u zsh/zprof'
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 #zinit ice atinit'zmodload zsh/zprof' \
 #  atload'zprof | head -n 20; zmodload -u zsh/zprof'
 zinit light zsh-users/zsh-autosuggestions
@@ -148,14 +138,15 @@ zinit load wfxr/forgit
 
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay"  \
-    zdharma/fast-syntax-highlighting \
+    zdharma-continuum/fast-syntax-highlighting \
     OMZP::colored-man-pages \
   as"completion" \
     OMZP::docker/_docker
 
 #zinit light matthieusb/zsh-sdkman
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
-zinit pack"binary+keys" for fzf
+zinit pack"bgn+keys" for fzf
 #zinit light Aloxaf/fzf-tab
 zinit snippet "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh"
 zinit snippet "https://gist.githubusercontent.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236/raw/6e5d520bfc96d6b3e42571a54cb4d1ebc8e2dd84/functions.sh"
@@ -174,7 +165,7 @@ fi
 if [[ -s ~/.sdkman/bin/sdkman-init.sh ]]
 then
   export SDKMAN_DIR="$HOME/.sdkman"
-  zinit wait lucid src"$HOME/.sdkman/bin/sdkman-init.sh" for zdharma/null
+  zinit wait lucid src"$HOME/.sdkman/bin/sdkman-init.sh" for zdharma-continuum/null
 fi
 
 cd $HOME
