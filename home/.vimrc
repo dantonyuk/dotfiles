@@ -386,6 +386,7 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'DougBeney/vim-reddit'
 
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'NTBBloodbath/rest.nvim'
     " rest-nvim {{{2
     nnoremap <Space>hh :lua require('rest-nvim').run()<CR>
