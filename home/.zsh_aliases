@@ -1,4 +1,4 @@
-alias less='/bin/less -X -F'
+alias less='/usr/bin/less -X -F'
 alias ssherp='ssh dantonyuk@erp-conversion.erecyclingcorps.com'
 alias sshbld='ssh dantonyuk@build.erecyclingcorps.com'
 alias sshdev='ssh dantonyuk@dev.erecyclingcorps.com'
