@@ -16,7 +16,7 @@ if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 fi
 export GPG_TTY=$(tty)
 
-export EDITOR=/usr/bin/nvim
+export EDITOR=nvim
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null
 then
   export BROWSER=~/bin/browser
