@@ -174,7 +174,7 @@ map <Space>n<Space> :Scratch<Space>
     nnoremap <Space><Tab> :CocCommand fzf-preview.
     " }}}
 
-    Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
     " bufferline.nvim {{{2
     nnoremap <Space>bp :BufferLinePick<CR>
     nnoremap <Space>bc :BufferLinePickClose<CR>
@@ -520,9 +520,6 @@ require('lualine').setup {
 vim.opt.termguicolors = true
 require("bufferline").setup {
     highlights = {
-      background = {
-        gui = "",
-      },
       buffer_selected = {
         gui = "bold",
       },
