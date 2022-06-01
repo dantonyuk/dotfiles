@@ -16,6 +16,7 @@ if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 fi
 export GPG_TTY=$(tty)
 
+export PAGER="less -X -F"
 export EDITOR=nvim
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null
 then
