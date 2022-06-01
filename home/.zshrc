@@ -17,6 +17,7 @@ fi
 export GPG_TTY=$(tty)
 
 export PAGER="less -X -F"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null
 then
