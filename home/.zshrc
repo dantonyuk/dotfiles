@@ -19,10 +19,7 @@ export GPG_TTY=$(tty)
 export PAGER="/usr/bin/less -X -F"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
-if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null
-then
-  export BROWSER=~/bin/browser
-fi
+[ -f ~/bin/browser ] && export BROWSER=~/bin/browser
 
 export FZF_DEFAULT_COMMAND='rg --hidden --files --glob "!.git/"'
 export FZF_CTRL_T_OPTS="--preview 'fzf-preview {}' --preview-window up:75%
