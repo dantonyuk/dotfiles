@@ -168,6 +168,7 @@ fi
 
 cd $HOME
 
+export __p9k_force_term_shell_integration=1
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
