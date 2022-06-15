@@ -335,6 +335,7 @@ map <Space>n<Space> :Scratch<Space>
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
     " Refactoring mappings
+    command! -nargs=* -range CocFix :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, 'quickfix'])
     nmap <Space>ln <Plug>(coc-rename)
     nmap <Space>lf <Plug>(coc-format)
     xmap <Space>lf <Plug>(coc-format-selected)
