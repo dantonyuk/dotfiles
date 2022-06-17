@@ -87,4 +87,6 @@
 [browser "mine"]
     cmd = /home/dmitry/bin/browser
 [commit]
-    gpgsign = true
+	gpgsign = true
+[gpg]
+	program = gpg
