@@ -16,6 +16,13 @@
     quotepath = false
     commitGraph = true
 	excludesFile = ~/.gitignore
+[diff]
+    tool = kitty
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
 [pager]
     diff = delta
     log = delta
