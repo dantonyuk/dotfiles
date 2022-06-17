@@ -15,6 +15,7 @@
     pager = /bin/less -F -X
     quotepath = false
     commitGraph = true
+	excludesFile = /home/dima/.gitignore
 [pager]
     diff = delta
     log = delta
