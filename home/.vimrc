@@ -401,6 +401,8 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'pwntester/octo.nvim'
 
+    Plug 'vim-scripts/ReplaceWithRegister'
+
     Plug 'dantonyuk/auto-sessions.vim'
     Plug 'dantonyuk/russian-keyboard.vim'
  
