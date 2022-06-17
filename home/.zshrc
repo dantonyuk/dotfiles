@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/go/bin:$HOME/bin:$HOME/miniconda3/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/go/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
