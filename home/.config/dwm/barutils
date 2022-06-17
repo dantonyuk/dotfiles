@@ -1,0 +1,89 @@
+#!/bin/zsh
+
+hdd() {
+	hdd="$(df -h /home | grep /dev | awk '{print $3 " " $5}')"
+	echo -e " $hdd"
+}
+
+mem() {
+	mem="$(free -h | awk '/Mem:/ {printf $3 "/" $2}' | sed s/i//g)"
+	echo -e "  $mem"
+}
+
+cpu() {
+	read cpu a b c previdle rest < /proc/stat
+	prevtotal=$((a+b+c+previdle))
+	sleep 0.5
+	read cpu a b c idle rest < /proc/stat
+	total=$((a+b+c+idle))
+	cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+	echo -e "  $cpu%"
+}
+
+vol() {
+	vol=($(amixer -D pulse get Master | awk -F'[][]' 'END{ print $4" "$2 }'))
+	if [[ "${vol[1]}" == "on" ]]
+	then
+		icon="墳"
+	else
+		icon="婢"
+	fi
+	echo -e "$icon ${vol[2]}"
+}
+
+pkgs() {
+	pkgs="$(dpkg -l | grep '^ii' | wc -l)"
+	echo -e " $pkgs"
+}
+
+upgrades() {
+	upgrades="$(aptitude search '~U' | wc -l)"
+	if [[ $upgrades -gt 0 ]]
+	then
+		echo -e " $upgrades"
+	fi
+}
+
+vpn() {
+	vpn="$(ip a | grep tun0 | grep inet | wc -l)"
+	echo -e " $vpn"
+}
+
+charge() {
+	battery=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+	percentage=$(echo $battery | grep percentage | awk '{ print $2 }')
+	decimals=$((${percentage%%%} / 10))
+	state=$(echo $battery | grep state | awk '{ print $2 }')
+	if  [[ "$state" == "charging" ]]
+	then
+		symbol=f583
+	elif [[ "$decimals" -eq 10 ]]
+	then
+		symbol=f578
+	elif [[ "$decimals" -eq 0 ]]
+	then
+		symbol=f572
+	else
+		symbol=$(([##16]0xf578 + $decimals))
+	fi
+
+	echo -e "\u$symbol $percentage"
+}
+
+kbd_layout() {
+	layout=$(xset -q | grep LED | awk '{ print $10 }')
+	if [[ "$layout" == "00000000" ]]
+	then
+		lang="EN"
+	elif [[ "$layout" == "00001001" ]]
+	then
+		lang="RU"
+	else
+		lang="--"
+	fi
+	echo -e "  $lang"
+}
+
+datetime() {
+	echo -e " $(date +'%a, %e %b')  $(date +'%H:%M')"
+}

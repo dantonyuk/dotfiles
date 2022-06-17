@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+source $(dirname $0)/barutils
+
+SLEEP_SEC=1
+#loops forever outputting a line every SLEEP_SEC secs
+while :; do
+    xsetroot -name "$(upgrades)  $(cpu)  $(vol)  $(charge)  $(kbd_layout)  $(datetime)"
+	sleep $SLEEP_SEC
+done

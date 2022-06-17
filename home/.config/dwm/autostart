@@ -1,0 +1,33 @@
+#!/bin/bash
+
+export LANG=en_US.UTF-8
+export LANGUAGE=$LANG
+export PATH=~/bin:~/.cabal/bin:$PATH
+
+#export FONT_NAME='-*-dejavu sans mono-*-r-*-*-*-100-*-*-*-*-iso10646-1'
+
+setxkbmap -layout us,ru -variant ",winkeys" -option "grp:caps_toggle,grp_led:caps,compose:rctrl"
+xsetroot -solid black -cursor_name arrow
+xset r rate 150 40
+xset r
+xset s off
+xset -dpms
+
+killall --quiet unclutter
+unclutter -idle 2 &
+
+#killall --quiet stalonetray
+#stalonetray -i 16 --icon-gravity E --max-geometry 5x1-0+0 --geometry 5x1-0+0 -bg '#000000' --sticky >~/.xmonad/logs/stalonetray.log 2>&1 &
+
+# killall --quiet urxvtd
+#if [ "0" -eq `ps aux | grep "[u]rxvtd" | wc -l` ]
+#then
+#    urxvtd -f -q -o
+#fi
+
+killall --quiet xbindkeys
+xbindkeys
+
+killall --quiet dwmblocks
+dwmblocks &
+#$(dirname "$0")/baraction &
