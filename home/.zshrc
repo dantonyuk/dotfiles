@@ -173,3 +173,10 @@ export __p9k_force_term_shell_integration=1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fnm
+if [ -d ~/.fnm ]
+then
+  export PATH=~/.fnm:$PATH
+  eval "`fnm env`"
+fi
