@@ -12,7 +12,7 @@
 [core]
     autocrlf = input
     editor = nvim
-    pager = /bin/less -F -X
+    pager = /usr/bin/less -F -X
     quotepath = false
     commitGraph = true
 	excludesFile = /home/dima/.gitignore
