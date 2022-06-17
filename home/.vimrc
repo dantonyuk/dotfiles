@@ -433,7 +433,6 @@ map <Space>n<Space> :Scratch<Space>
 lua << EOF
 -- octo
 require"octo".setup {}
-require'octo.colors'.setup()
 
 -- lualine
 hide_in_width = function()
