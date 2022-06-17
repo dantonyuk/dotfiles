@@ -1,4 +1,29 @@
 {
-  "java.home": "/home/dmitry/.sdkman/candidates/java/11.0.8.hs-adpt",
-  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar"
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "nvim-web-devicons",
+
+    "java.enabled": true,
+    "java.autobuild.enabled": true,
+    "java.codeGeneration.generateComments": false,
+    "java.implementationsCodeLens.enabled": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.completion.enabled" : true,
+    "java.foldingRange.enabled" : true,
+    "java.format.comments.enabled" : true,                                                                                                                                                                                                                                              
+    "java.format.enabled" : true,                                                                                                                                                                                                                                                       
+    "java.format.onType.enabled" : true,
+    "java.progressReports.enabled" : false,
+    "java.jdt.ls.vmargs": "-javaagent:/Users/ko2838/.config/nvim/coc/java/lombok.jar -Dlog.protocol=true -Dlog.level=ALL --enable-preview",
+    "java.trace.server": "verbose",
+    "java.completion.guessMethodArguments": true,
+    "java.import.gradle.enabled": true,
+    "java.import.gradle.wrapper.enabled": true,
+    "java.configuration.runtimes": [{
+        "name": "JavaSE-17",
+        "path": "~/.sdkman/candidates/java/17.0.3-tem",
+        "default": true
+    }, {
+        "name": "JavaSE-1.8",
+        "path": "~/.sdkman/candidates/java/8.0.332-librca"
+    }]
 }
