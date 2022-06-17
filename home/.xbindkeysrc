@@ -1,0 +1,17 @@
+"pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 dwmblocks"
+XF86AudioLowerVolume
+
+"pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 dwmblocks"
+XF86AudioRaiseVolume
+
+"pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 dwmblocks"
+XF86AudioMute
+
+"brighter up"
+XF86MonBrightnessUp
+
+"brighter down"
+XF86MonBrightnessDown
+
+"scrot -s -e 'xclip -selection clipboard -target image/png -i $f'"
+Mod4+Shift+s
