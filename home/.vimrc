@@ -91,6 +91,7 @@ augroup END
 " Buffers {{{
     set hidden
     set nostartofline
+    set autoread
     nnoremap <Leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
     nnoremap <Leader>s :update<CR>
 " }}}
