@@ -78,3 +78,10 @@
 (setq completion-styles '(flex basic orderless))
 (after! vertico
   (setq completion-styles '(flex basic orderless)))
+(after! lsp-java
+  (setq lsp-java-vmargs
+        (append lsp-java-vmargs
+                (list (concat "-javaagent:" (expand-file-name "~/.config/nvim/coc/java/lombok.jar"))
+                      "-Dlog.protocol=true"
+                      "-Dlog.level=ALL"
+                      "--enable-preview"))))
