@@ -78,6 +78,14 @@
 (setq completion-styles '(flex basic orderless))
 (after! vertico
   (setq completion-styles '(flex basic orderless)))
+
+(after! magit
+  (setq auth-sources '("~/.authinfo"))
+  (map! :leader
+        :desc "Commit Amend"
+        :nmv "g c !"
+        #'magit-commit-amend))
+
 (after! lsp-java
   (setq lsp-java-vmargs
         (append lsp-java-vmargs
