@@ -365,14 +365,14 @@ map <Space>n<Space> :Scratch<Space>
     augroup END
 
     " Text objects: functions and classes
-    xmap if <Plug>(coc-funcobj-i)
-    omap if <Plug>(coc-funcobj-i)
-    xmap af <Plug>(coc-funcobj-a)
-    omap af <Plug>(coc-funcobj-a)
-    xmap ic <Plug>(coc-classobj-i)
-    omap ic <Plug>(coc-classobj-i)
-    xmap ac <Plug>(coc-classobj-a)
-    omap ac <Plug>(coc-classobj-a)
+    " xmap if <Plug>(coc-funcobj-i)
+    " omap if <Plug>(coc-funcobj-i)
+    " xmap af <Plug>(coc-funcobj-a)
+    " omap af <Plug>(coc-funcobj-a)
+    " xmap ic <Plug>(coc-classobj-i)
+    " omap ic <Plug>(coc-classobj-i)
+    " xmap ac <Plug>(coc-classobj-a)
+    " omap ac <Plug>(coc-classobj-a)
     " }}}
 
     Plug 'mattn/emmet-vim'
