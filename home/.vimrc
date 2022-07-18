@@ -410,7 +410,38 @@ map <Space>n<Space> :Scratch<Space>
 
     Plug 'dantonyuk/auto-sessions.vim'
     Plug 'dantonyuk/russian-keyboard.vim'
- 
+
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+    " Firenvim {{{2
+    if exists('g:started_by_firenvim')
+        set laststatus=0
+        set guifont=monospace:h16
+        colorscheme basic-light
+        let g:firenvim_config = {
+            \ 'globalSettings': {
+                \ 'alt': 'all',
+            \  },
+            \ 'localSettings': {
+                \ 'github.com*': {
+                    \ 'selector': 'div[role="presentation"], textarea',
+                    \ 'priority': 1,
+                \ },
+                \ 'mail.google.com*': {
+                    \ 'selector': 'div[role="textbox"]',
+                    \ 'priority': 1,
+                \ },
+                \ '.*': {
+                    \ 'cmdline': 'nvim',
+                    \ 'content': 'text',
+                    \ 'priority': 0,
+                    \ 'selector': 'textarea',
+                    \ 'takeover': 'always',
+                \ },
+            \ }
+        \ }
+    endif
+    " }}}
+
     call plug#end()
     " vim-startify {{{2
     let g:startify_custom_header_quotes =
@@ -533,6 +564,7 @@ require("bufferline").setup {
       },
     },
     options = {
+        always_show_bufferline = not vim.g.started_by_firenvim,
         show_buffer_close_icons = false,
         show_close_icon = false,
         diagnostics = "coc",
