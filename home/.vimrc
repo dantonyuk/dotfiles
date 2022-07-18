@@ -384,11 +384,15 @@ map <Space>n<Space> :Scratch<Space>
     " Text object plugins
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'wellle/targets.vim'
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
     " To test them first
     Plug 'DougBeney/vim-reddit'
 
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
+
     Plug 'NTBBloodbath/rest.nvim'
     " rest-nvim {{{2
     nnoremap <Space>hh :lua require('rest-nvim').run()<CR>
@@ -541,6 +545,59 @@ require("bufferline").setup {
             }
         }
     }
+}
+
+-- treesitter-context
+require'treesitter-context'.setup {
+    enable = true
+}
+
+-- nvim-treesitter
+require'nvim-treesitter.configs'.setup {
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner"
+      }
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        [']m'] = '@function.outer',
+        [']]'] = '@class.outer'
+      },
+      goto_next_end = {
+        [']M'] = '@function.outer',
+        [']['] = '@class.outer'
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+        ['[['] = '@class.outer'
+      },
+      goto_previous_end = {
+        ['[M'] = '@function.outer',
+        ['[]'] = '@class.outer'
+      }
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<Space>tpsn"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<Space>tpsp"] = "@parameter.inner",
+      },
+    },
+    context_commentstring = {
+      enable = true
+    }
+  },
 }
 EOF
 " }}}
