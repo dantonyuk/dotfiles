@@ -1,4 +1,4 @@
-" vim: set fdm=marker:
+" vim: set fdm=marker:{{{}}}
 
 " Compatibility {{{
     set encoding=utf-8
