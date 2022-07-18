@@ -9,5 +9,6 @@ done
 
 for f in home/**/*(.D)
 do
-    ln -sf "${f:a}" $HOME/
+    echo ln -sf "${f:a}" $HOME/${f#home/}
+    ln -sf "${f:a}" $HOME/${f#home/}
 done
