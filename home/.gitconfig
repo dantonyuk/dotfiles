@@ -9,6 +9,7 @@
     icp = interactive-cherrypick
     rcp = release-cherrypick
     ir = interactive-revert
+    news = log -p HEAD@{1}..HEAD@{0}
     hub = !gh
 [core]
     autocrlf = input
