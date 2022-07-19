@@ -7,6 +7,7 @@
     bd = branch -D
     ppr = !git push && git pr
     icp = interactive-cherrypick
+    rcp = release-cherrypick
     ir = interactive-revert
     hub = !gh
 [core]
