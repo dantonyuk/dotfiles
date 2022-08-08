@@ -1,7 +1,4 @@
 alias less='/usr/bin/less -X -F'
-alias ssherp='ssh dantonyuk@erp-conversion.erecyclingcorps.com'
-alias sshbld='ssh dantonyuk@build.erecyclingcorps.com'
-alias sshdev='ssh dantonyuk@dev.erecyclingcorps.com'
 alias hr='repeat $(tput cols) echo -n _'
 alias cact='source ~/miniconda3/bin/activate'
 alias cdec='source ~/miniconda3/bin/deactivate'
