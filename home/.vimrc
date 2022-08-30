@@ -169,7 +169,7 @@ map <Space>n<Space> :Scratch<Space>
     nnoremap <silent> <Leader>A :Files<CR>
 
     if has('nvim') || has('gui_running')
-      let $FZF_DEFAULT_OPTS .= ' --inline-info --bind up:preview-up,down:preview-down'
+      let $FZF_DEFAULT_OPTS .= ' --inline-info --bind up:preview-up,down:preview-down,F2:toggle-preview'
     endif
 
     nnoremap <Space><Tab> :CocCommand fzf-preview.
