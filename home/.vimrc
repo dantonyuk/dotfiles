@@ -282,7 +282,7 @@ map <Space>n<Space> :Scratch<Space>
     " }}}
     Plug 'guns/vim-sexp'
     " vim-sexp {{{2
-    let g:sexp_filetypes = 'clojure,scheme,racket,lisp,timl'
+    let g:sexp_filetypes = 'clojure,scheme,racket,lisp,timl,fennel'
     " }}}
     Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
