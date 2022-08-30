@@ -391,7 +391,6 @@ map <Space>n<Space> :Scratch<Space>
 
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/nvim-treesitter-context'
 
     Plug 'NTBBloodbath/rest.nvim'
     " rest-nvim {{{2
@@ -577,11 +576,6 @@ require("bufferline").setup {
             }
         }
     }
-}
-
--- treesitter-context
-require'treesitter-context'.setup {
-    enable = true
 }
 
 -- nvim-treesitter
