@@ -560,7 +560,8 @@ vim.opt.termguicolors = true
 require("bufferline").setup {
     highlights = {
       buffer_selected = {
-        gui = "bold",
+        bold = true,
+        italic = false
       },
     },
     options = {
