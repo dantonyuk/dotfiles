@@ -509,10 +509,11 @@ require('lualine').setup {
             "python_env"
         },
         lualine_x = {
-            {
-                'coc#status',
-                type = 'vim_fun'
-            },
+-- Uncomment when fixed
+--            {
+--                function() return vim.pesc(vim.g.coc_status or '') end,
+--                'bo:filetype'
+--            },
             {
                 "diagnostics",
 				sources = { 'nvim_diagnostic', 'coc' },
