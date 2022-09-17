@@ -415,7 +415,7 @@ map <Space>n<Space> :Scratch<Space>
     if exists('g:started_by_firenvim')
         set laststatus=0
         set guifont=monospace:h16
-        colorscheme basic-light
+        "colorscheme basic-light
         let g:firenvim_config = {
             \ 'globalSettings': {
                 \ 'alt': 'all',
