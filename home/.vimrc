@@ -313,14 +313,14 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
     " coc {{{2
     " Autocompletion mappings
-    function! s:check_back_space() abort
+    function! CheckBackspace() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
     inoremap <silent><expr> <TAB>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<Tab>" :
-                \ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<Tab>"
     inoremap <expr><C-y><C-y> pumvisible() ? "\<C-y>" : "\<C-y>\<C-y>"
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
