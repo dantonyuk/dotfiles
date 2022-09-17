@@ -59,7 +59,7 @@
 " {{{ Title
 augroup Title
   autocmd!
-  autocmd BufEnter * let &titlestring = "[vim] " . expand("%:t") | set title
+  autocmd VimEnter * let &titlestring = "[vim] " . matchlist(getcwd(), '\v.*/([^/]+)$')[1] | set title
 augroup END
 " }}}
 " Mouse {{{
