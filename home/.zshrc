@@ -31,6 +31,10 @@ export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-up,ctrl-d:preview-down
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
 "
 
+TRAPWINCH() {
+  zle && { zle reset-prompt; zle -R }
+}
+
 setopt extendedglob
 unsetopt BG_NICE
 
