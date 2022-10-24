@@ -183,6 +183,7 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'jreybert/vimagit'
     Plug 'rhysd/git-messenger.vim'
+    Plug 'TimUntersberger/neogit'
     " git-messenger {{{2
     nnoremap <silent> <Space>gm :GitMessenger<CR>
     nmap <silent> <Space>gM gmgm
