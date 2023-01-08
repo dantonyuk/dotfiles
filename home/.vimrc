@@ -588,6 +588,12 @@ require("bufferline").setup {
 
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "php", "kotlin", "scala", "javascript" },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
   textobjects = {
     select = {
       enable = true,
