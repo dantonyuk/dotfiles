@@ -158,6 +158,8 @@ map <Space>n<Space> :Scratch<Space>
     packadd matchit
     packadd cfilter
 
+    let g:netrw_fastbrowse = 0
+
     let g:polyglot_disabled = ['go']
 
     call plug#begin('~/.vim/plugged')
