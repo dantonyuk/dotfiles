@@ -150,6 +150,7 @@ map <Space>n<Space> :Scratch<Space>
     \ 'coc-explorer',
     \ 'coc-go',
     \ 'coc-java',
+    \ 'coc-kotlin',
     \ 'coc-lists',
     \ 'coc-snippets'
     \ ]
