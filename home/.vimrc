@@ -293,10 +293,10 @@ map <Space>n<Space> :Scratch<Space>
     "Plug 'sheerun/vim-polyglot'
     Plug 'junegunn/vim-easy-align'
     " vim-easy-align {{{2
-    xmap ga <Plug>(EasyAlign)
-    nmap ga <Plug>(EasyAlign)
-    xmap gA <Plug>(LiveEasyAlign)
-    nmap gA <Plug>(LiveEasyAlign)
+    xmap gl <Plug>(EasyAlign)
+    nmap gl <Plug>(EasyAlign)
+    xmap gL <Plug>(LiveEasyAlign)
+    nmap gL <Plug>(LiveEasyAlign)
     " }}}
 
     Plug 'junegunn/goyo.vim'
