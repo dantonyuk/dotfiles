@@ -12,6 +12,11 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+if [ -f /opt/homebrew/bin/brew ]
+then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
   export WSL_HOST=$(ip route | grep default | awk '{print $3}')
   export DISPLAY=$WSL_HOST:0
@@ -186,3 +191,7 @@ then
   export PATH=~/.fnm:$PATH
   eval "`fnm env`"
 fi
+
+#brew
+[[ ! -f /opt/homebrew/share/zsh/site-functions ]] || source /opt/homebrew/share/zsh/site-functions
+
