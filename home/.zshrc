@@ -195,3 +195,10 @@ fi
 #brew
 [[ ! -f /opt/homebrew/share/zsh/site-functions ]] || source /opt/homebrew/share/zsh/site-functions
 
+# nvm
+export NODE_OPTIONS="--dns-result-order=ipv4first"
+export NVM_DIR=~/.nvm
+if [ -f /opt/homebrew/bin/brew ]
+then
+    source $(brew --prefix nvm)/nvm.sh
+fi
