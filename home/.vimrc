@@ -12,6 +12,8 @@
     set t_vb=
 
     set tags=./tags;
+
+    map <F1> <NOP>
 " }}}
 " Indentations, tabs/spaces {{{
     set expandtab
