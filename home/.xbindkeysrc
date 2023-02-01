@@ -15,3 +15,6 @@ XF86MonBrightnessDown
 
 "scrot -s -e 'xclip -selection clipboard -target image/png -i $f'"
 Mod4+Shift+s
+
+"/home/dima/bin/slock"
+Mod4+Shift+l
