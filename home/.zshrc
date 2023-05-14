@@ -206,3 +206,5 @@ if [ -d /opt/homebrew/opt/mysql-client/bin ]
 then
     export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 fi
+
+[ -f "/home/dima/.ghcup/env" ] && source "/home/dima/.ghcup/env" # ghcup-env
