@@ -414,6 +414,7 @@ map <Space>n<Space> :Scratch<Space>
     Plug 'vim-scripts/ReplaceWithRegister'
 
     Plug 'github/copilot.vim'
+    Plug 'madox2/vim-ai'
 
     Plug 'dantonyuk/auto-sessions.vim'
     Plug 'dantonyuk/russian-keyboard.vim'
