@@ -13,7 +13,7 @@
     "java.format.enabled" : true,                                                                                                                                                                                                                                                       
     "java.format.onType.enabled" : true,
     "java.progressReports.enabled" : false,
-    "java.jdt.ls.vmargs": "-javaagent:/Users/ko2838/.config/nvim/coc/java/lombok.jar -Dlog.protocol=true -Dlog.level=ALL --enable-preview",
+    "java.jdt.ls.vmargs": "-javaagent:/Users/ko2838/.config/nvim/coc/java/lombok.jar -Dlog.protocol=true -Dlog.level=ALL",
     "java.trace.server": "verbose",
     "java.completion.guessMethodArguments": true,
     "java.import.gradle.enabled": true,
