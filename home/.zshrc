@@ -27,6 +27,7 @@ export PAGER="/usr/bin/less -X -F"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 [ -f ~/bin/browser ] && export BROWSER=~/bin/browser
+[ -f ~/.zsh.priv ] && source ~/.zsh.priv
 
 export FZF_DEFAULT_COMMAND='rg --hidden --files --glob "!.git/"'
 export FZF_CTRL_T_OPTS="--preview 'fzf-preview {}' --preview-window up:75%
