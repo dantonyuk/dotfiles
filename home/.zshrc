@@ -208,3 +208,6 @@ then
 fi
 
 [ -f "/home/dima/.ghcup/env" ] && source "/home/dima/.ghcup/env" # ghcup-env
+
+# Always use ~/bin as a primary directory for binaries
+export PATH=$HOME/bin:$PATH
