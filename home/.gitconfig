@@ -2,6 +2,7 @@
     permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
     co = checkout
     mm = mastermerge
+    mr = masterrebase
     up = pull --rebase --autostash
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     bd = branch -D
