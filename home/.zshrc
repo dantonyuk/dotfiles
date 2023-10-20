@@ -36,7 +36,7 @@ export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-up,ctrl-d:preview-down,F2:toggle-
 --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
 "
-export FZF_CTRL_R_OPTS="--layout=reverse --preview-window=up:10 --preview='echo -e {}'"
+export FZF_CTRL_R_OPTS="--layout=reverse --preview-window=up:7 --preview='echo -e {}'"
 
 TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
